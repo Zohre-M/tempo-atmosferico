@@ -2,11 +2,33 @@ body {
   background: rgb(249, 247, 254);
   font-family: "Roboto", sans-serif;
 }
+header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 30px;
+}
 
 .container {
   background: white;
   width: 600px;
   margin: 50px auto;
-  padding: 30px;
+  padding: 28px;
   border-radius: 16px;
+  box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
+}
+.search-bar {
+  background: rgb(249, 247, 254);
+  border: none;
+  border-radius: 6px;
+  padding: 15px 20px;
+  width: 80%;
+  font-size: 16px;
+}
+.submit-button {
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 15px 20px;
+  font-size: 16px;
+  background: rgb(136, 93, 241);
+  width: 18%;
 }
