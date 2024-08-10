@@ -9,7 +9,18 @@ header {
 main {
   display: flex;
   justify-content: space-between;
-  margin: 30px;
+  margin: 30px 0;
+}
+a {
+  color: rgb(136, 93, 241);
+}
+footer {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 14px;
+  text-align: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding-top: 15px;
+  line-height: 1;
 }
 
 .container {
@@ -43,15 +54,17 @@ main {
   color: rgba(39, 33, 66, 0.4);
   font-size: 16px;
   line-height: 24px;
+  font-weight: 500;
 }
 
 .current-weather-data-amount {
   color: rgb(246, 82, 130);
+  font-weight: 700;
 }
 .current-city {
   font-size: 38px;
   line-height: 48px;
-  font-weight: 500px;
+  font-weight: 700;
   margin: 0 auto;
 }
 .current-temp {
@@ -60,6 +73,7 @@ main {
 }
 .current-temp-amount {
   font-size: 88px;
+  font-weight: 700;
 }
 .current-temp-unit {
   font-size: 28px;
