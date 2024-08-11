@@ -15,41 +15,49 @@
   </head>
   <body>
     <div class="container">
-        <header>
-      <form>
-        <input type="search" placeholder="Enter a city..." required  class="search-bar" />
-        <input type="submit" value="Search" class="submit-button"/>
-      </form>
-    </header>
-    <main>
-      <div>
-        <h1 class="current-city">Paris</h1>
-        <p class="current-weather-data">
-          Friday 23:40, clear sky
-          <br />
-          Humidity: <span class="current-weather-data-amount">75%</span>, Wind: <span class="current-weather-data-amount">1.54km/h</span>
+      <header>
+        <form>
+          <input
+            type="search"
+            placeholder="Enter a city..."
+            required
+            class="search-bar"
+          />
+          <input type="submit" value="Search" class="submit-button" />
+        </form>
+      </header>
+      <main>
+        <div>
+          <h1 class="current-city">Paris</h1>
+          <p class="current-weather-data">
+            Friday 23:40, clear sky
+            <br />
+            Humidity: <span class="current-weather-data-amount">75%</span>,
+            Wind: <span class="current-weather-data-amount">1.54km/h</span>
+          </p>
+        </div>
+        <div class="current-temp">
+          <div class="current-temp-icon">☀</div>
+          <div class="current-temp-amount">18</div>
+          <div class="current-temp-unit">°C</div>
+        </div>
+      </main>
+      <footer>
+        <p>
+          This project was coded by
+          <a href="https://github.com/Zohre-M" target="_blank"
+            >Zohreh Maghsoodi</a
+          >, is
+          <a href="https://github.com/Zohre-M/tempo-atmosferico" target="_blank"
+            >open-sourced on GitHub</a
+          >
+          and
+          <a href="https://tempo-atmosferico.vercel.app/" target="_blank"
+            >hosted on Vercel</a
+          >
         </p>
-      </div>
-      <div class="current-temp">
-        <div class="current-temp-icon">☀</div>
-        <div class="current-temp-amount">18</div>
-        <div class="current-temp-unit">°C</div>
+      </footer>
     </div>
-    </main>
-    <footer>
-      <p>
-        This project was coded by
-        <a href="https://github.com/Zohre-M" target="_blank">Zohreh Maghsoodi</a
-        >, is
-        <a href="https://github.com/Zohre-M/tempo-atmosferico" target="_blank"
-          >open-sourced on GitHub</a
-        >
-        and
-        <a href="https://tempo-atmosferico.vercel.app/" target="_blank"
-          >hosted on Vercel</a
-        >
-      </p>
-    </footer>
+    <script src="src/index.js"></script>
   </body>
-    </div>
 </html>
