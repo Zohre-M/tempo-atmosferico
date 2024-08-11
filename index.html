@@ -16,19 +16,20 @@
   <body>
     <div class="container">
       <header>
-        <form>
+        <form id="submit-city-form">
           <input
             type="search"
             placeholder="Enter a city..."
             required
             class="search-bar"
+            id="city-search"
           />
           <input type="submit" value="Search" class="submit-button" />
         </form>
       </header>
       <main>
         <div>
-          <h1 class="current-city">Paris</h1>
+          <h1 class="current-city" id="current-city">Paris</h1>
           <p class="current-weather-data">
             Friday 23:40, clear sky
             <br />
