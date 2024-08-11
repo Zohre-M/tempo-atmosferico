@@ -12,6 +12,7 @@
       ..400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
   </head>
   <body>
     <div class="container">
@@ -31,15 +32,20 @@
         <div>
           <h1 class="current-city" id="current-city">Paris</h1>
           <p class="current-weather-data">
-            Friday 23:40, clear sky
+            Friday 23:40, <span id="current-weather-desription">clear sky</span>
             <br />
-            Humidity: <span class="current-weather-data-amount">75%</span>,
-            Wind: <span class="current-weather-data-amount">1.54km/h</span>
+            Humidity:
+            <span class="current-weather-data-amount" id="current-humidity"
+              >75%</span
+            >, Wind:
+            <span class="current-weather-data-amount" id="current-wind-speed"
+              >1.54km/h</span
+            >
           </p>
         </div>
         <div class="current-temp">
           <div class="current-temp-icon">☀</div>
-          <div class="current-temp-amount">18</div>
+          <div class="current-temp-amount" id="current-temp-amount">18</div>
           <div class="current-temp-unit">°C</div>
         </div>
       </main>
