@@ -67,6 +67,25 @@ function getTime(date) {
   return currentTime;
 }
 
+function dispalyForecast() {
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+  let forecast = "";
+  days.forEach(function (day) {
+    forecast += `
+  <div class="weather-forecast-daily">
+            <div class="weather-forecast-day">${day}</div>
+            <div class="weather-forecast-icon">☀</div>
+            <div class="weather-forecast-temp">
+              <div class="weather-forecast-temp-max">37º</div>
+              <div class="weather-forecast-temp-min">22º</div>
+            </div>
+          </div>`;
+  });
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = forecast;
+}
+
 let formElement = document.querySelector("#submit-city-form");
 formElement.addEventListener("submit", searchCity);
 getWeatherData("Milan");
+dispalyForecast();
