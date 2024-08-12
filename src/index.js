@@ -12,7 +12,6 @@ function getWeatherData(city) {
   axios.get(apiUrl).then(displayWeatherData);
 }
 function displayWeatherData(response) {
-  console.log(response);
   let currentTemp = Math.round(response.data.temperature.current);
   let currentTempElement = document.querySelector("#current-temp-amount");
   let currentWeatherDescriptionElement = document.querySelector(
@@ -74,13 +73,14 @@ function getForcast(city) {
 }
 
 function dispalyForecast(response) {
-  console.log(response);
-  let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
   let forecast = "";
-  days.forEach(function (day, index) {
-    forecast += `
+  response.data.daily.forEach(function (day, index) {
+    if (index < 5) {
+      forecast += `
   <div class="weather-forecast-daily">
-            <div class="weather-forecast-day">${day}</div>
+            <div class="weather-forecast-day">${getForecastDay(
+              day.time * 1000
+            )}</div>
             <div >
              <img src="${
                response.data.daily[index].condition.icon_url
@@ -95,12 +95,18 @@ function dispalyForecast(response) {
               )}º</div>
             </div>
           </div>`;
+    }
   });
   let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = forecast;
+}
+function getForecastDay(time) {
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let date = new Date(time);
+  let WeekDay = days[date.getDay()];
+  return WeekDay;
 }
 
 let formElement = document.querySelector("#submit-city-form");
 formElement.addEventListener("submit", searchCity);
 getWeatherData("Milan");
-dispalyForecast();
