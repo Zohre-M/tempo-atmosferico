@@ -6,11 +6,7 @@ header {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   padding-bottom: 30px;
 }
-main {
-  display: flex;
-  justify-content: space-between;
-  margin: 30px 0;
-}
+
 a {
   color: rgb(136, 93, 241);
 }
@@ -21,6 +17,11 @@ footer {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   padding-top: 15px;
   line-height: 1;
+}
+.current-weather {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 0;
 }
 
 .container {
@@ -82,4 +83,32 @@ footer {
 .current-temp-icon {
   margin-top: 0 auto;
   width: 90px;
+}
+.weather-forecast {
+  display: flex;
+  justify-content: space-around;
+  margin: 30px auto;
+}
+.weather-forecast-daily {
+  text-align: center;
+}
+.weather-forecast-day {
+  color: rgba(39, 33, 66, 0.4);
+  font-size: 16px;
+  line-height: 20px;
+}
+.weather-forecast-icon {
+  margin: 10px auto;
+}
+.weather-forecast-temp {
+  display: flex;
+}
+.weather-forecast-temp-max {
+  padding: 10px;
+  font-weight: 700;
+  color: rgb(246, 82, 130);
+}
+.weather-forecast-temp-min {
+  padding: 10px;
+  color: rgb(246, 82, 130);
 }
