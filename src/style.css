@@ -80,6 +80,6 @@ footer {
   margin-top: 6px;
 }
 .current-temp-icon {
-  font-size: 40px;
-  margin-top: 15px;
+  margin-top: 0 auto;
+  width: 90px;
 }

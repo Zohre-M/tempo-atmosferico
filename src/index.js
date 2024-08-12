@@ -26,13 +26,47 @@ function displayWeatherData(response) {
   let currentHumidityElement = document.querySelector("#current-humidity");
   let currentWindSpeed = Math.round(response.data.wind.speed);
   let currentWindSpeedElement = document.querySelector("#current-wind-speed");
+  let currentTempIcon = response.data.condition.icon_url;
+  let currentTempIconElement = document.querySelector("#current-temp-icon");
+  let currentDate = response.data.time;
+  let currentDateElement = document.querySelector("#current-date");
 
   currentTempElement.innerHTML = currentTemp;
   currentWeatherDescriptionElement.innerHTML = currentWeatherDescription;
   cityElement.innerHTML = city;
   currentHumidityElement.innerHTML = `${currentHumidity}%`;
   currentWindSpeedElement.innerHTML = `${currentWindSpeed}km/h`;
+  currentDateElement.innerHTML = getTime(currentDate);
+  currentTempIconElement.innerHTML = `<img
+                src="${currentTempIcon}"
+                class="current-temp-icon"
+              />`;
+}
+function getTime(date) {
+  time = new Date(date * 1000);
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[time.getDay()];
+  let hours = time.getHours();
+  let minutes = time.getMinutes();
+  console.log(minutes);
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  let currentTime = `${day} ${hours}:${minutes}`;
+  return currentTime;
 }
 
 let formElement = document.querySelector("#submit-city-form");
 formElement.addEventListener("submit", searchCity);
+getWeatherData("Milan");
