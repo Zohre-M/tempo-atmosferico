@@ -77,14 +77,22 @@ function dispalyForecast(response) {
   console.log(response);
   let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
   let forecast = "";
-  days.forEach(function (day) {
+  days.forEach(function (day, index) {
     forecast += `
   <div class="weather-forecast-daily">
             <div class="weather-forecast-day">${day}</div>
-            <div class="weather-forecast-icon">☀</div>
+            <div >
+             <img src="${
+               response.data.daily[index].condition.icon_url
+             }" class="weather-forecast-icon">
+            </div>
             <div class="weather-forecast-temp">
-              <div class="weather-forecast-temp-max">37º</div>
-              <div class="weather-forecast-temp-min">22º</div>
+              <div class="weather-forecast-temp-max">${Math.round(
+                response.data.daily[index].temperature.maximum
+              )}º</div>
+              <div class="weather-forecast-temp-min">${Math.round(
+                response.data.daily[index].temperature.minimum
+              )}º</div>
             </div>
           </div>`;
   });

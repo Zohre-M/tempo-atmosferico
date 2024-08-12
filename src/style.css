@@ -98,7 +98,9 @@ footer {
   line-height: 20px;
 }
 .weather-forecast-icon {
+  display: block;
   margin: 10px auto;
+  width: 90px;
 }
 .weather-forecast-temp {
   display: flex;
