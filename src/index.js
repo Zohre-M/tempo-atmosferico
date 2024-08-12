@@ -41,6 +41,7 @@ function displayWeatherData(response) {
                 src="${currentTempIcon}"
                 class="current-temp-icon"
               />`;
+  getForcast(city);
 }
 function getTime(date) {
   time = new Date(date * 1000);
@@ -66,8 +67,14 @@ function getTime(date) {
   let currentTime = `${day} ${hours}:${minutes}`;
   return currentTime;
 }
+function getForcast(city) {
+  let apiKey = "118fe35e7ob1e1d3379dc44t5fac90b2";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(dispalyForecast);
+}
 
-function dispalyForecast() {
+function dispalyForecast(response) {
+  console.log(response);
   let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
   let forecast = "";
   days.forEach(function (day) {
